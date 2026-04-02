@@ -62,8 +62,6 @@ gh repo create YOUR_USERNAME/REPO_NAME --public --source=. --remote=origin
 ```bash
 git push -u origin main
 ```
-
-أحتاج لمساعدتك؟
-- أستطيع تنفيذ `git init` و`git commit` ورفع المشروع نيابةً عنك إذا سمحت لي بالوصول إلى جهازك أو زوّدتني بتفاصيل `gh` (أو تفضّل تنفيذ الأوامر محلياً فأنصح باتباع الأوامر أعلاه).
+.
 
 إذا تريد، أتمّم لك الآن تعديل الـ `README.md` أو أنفّذ أوامر `git` محليًا—اختر ما تفضّل.
