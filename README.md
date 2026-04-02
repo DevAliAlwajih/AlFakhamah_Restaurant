@@ -63,5 +63,3 @@ gh repo create YOUR_USERNAME/REPO_NAME --public --source=. --remote=origin
 git push -u origin main
 ```
 .
-
-إذا تريد، أتمّم لك الآن تعديل الـ `README.md` أو أنفّذ أوامر `git` محليًا—اختر ما تفضّل.
