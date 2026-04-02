@@ -1,0 +1,36 @@
+# Node (if any)
+node_modules/
+
+# PHP / Composer
+/vendor/
+/composer.lock
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Uploads (if you don't want to track user uploads)
+assets/images/uploads/
+
+# Database dumps (optional) - uncomment to ignore
+# DataSet/*.sql
+
+# Temporary files
+*.tmp
+*.cache
+
+# Build / dist
+dist/
+
+# XAMPP specific (if you have local config files)
+.htaccess
+
+# Allow dataset and frontend/backend code to be tracked
