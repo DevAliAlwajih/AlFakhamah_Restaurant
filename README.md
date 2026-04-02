@@ -1,43 +1,69 @@
 # AlFakhamah_Restaurant
 
-مشروع موقع مطعم (PHP + static assets).
+مشروع موقع لمطعم — تطبيق ويب بسيط مبني بـ PHP مع ملفات ثابتة للواجهة.
 
-## خطوات رفع المشروع إلى GitHub (مقترح)
+محتوى المشروع (نظرة عامة)
+- الواجهة الأمامية: مجلد `frontend/` يحتوي صفحات PHP لعرض القوائم، الحجز، والاتصال.
+- الموارد الثابتة: `assets/` يحتوي CSS، JavaScript، و`images/`.
+- الخادم والوظائف: `backend/` يحتوي ملفات معالجة مثل `db.php`, `login.php`, `order.php`, `reserve.php`, `subscribe.php`.
+- لوحة الإدارة: `backend/admin/` حيث توجد صفحات لإدارة المنتجات والمحتوى.
+- نسخة قاعدة البيانات: `DataSet/` تحتوي ملف SQL (استيراد عند الإعداد).
 
-1. افتح موجه الأوامر في مجلد المشروع:
+المتطلبات (محليًا)
+- XAMPP أو أي بيئة تشغيل PHP + MySQL (PHP 7.4+ أو أحدث توصية).
+- phpMyAdmin أو أداة أخرى لاستيراد ملف SQL.
 
-```bash
-cd c:/xampp/htdocs/ProSowary/AlFakhamah_Restaurant
+خطوات التشغيل محليًا
+1. ضع المجلد داخل مجلد الخادم المحلي (مثال: `C:/xampp/htdocs/AlFakhamah_Restaurant`).
+2. شغِّل Apache وMySQL عبر XAMPP.
+3. أنشئ قاعدة بيانات جديدة في phpMyAdmin (مثال: `fakhamah_db`).
+4. استورد ملف SQL الموجود في `DataSet/` (مثل `fakhamah .sql`) إلى القاعدة التي أنشأتها.
+5. افتح وحرِّر ملف الاتصال بقاعدة البيانات `backend/db.php` وضبط اسم القاعدة واسم المستخدم وكلمة المرور:
+
+```php
+// مثال: backend/db.php
+$db_host = 'localhost';
+$db_user = 'root';
+$db_pass = '';
+$db_name = 'fakhamah_db';
+$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 ```
 
-2. إنشـاء مستودع Git محلي وإضافة الملفات:
+6. افتح المتصفح وادخل العنوان المناسب، مثلاً:
+
+```
+http://localhost/AlFakhamah_Restaurant/frontend/index.php
+```
+
+ملحوظات مهمة
+- إن كان هناك ملفات تخص إعدادات محلية أو كلمات مرور (مثل ملفات `.env` أو إعدادات قاعدة البيانات)، لا ترفعها إلى مستودع عام. قم بتحديث `.gitignore` لتجاهل الملفات الحساسة.
+- مسار الصور المرفوعة موجود في `assets/images/uploads/` وقد تم إضافة هذا المسار في `.gitignore` افتراضياً.
+
+رفع المشروع إلى GitHub (مقترح مختصر)
+1. افتح Terminal داخل مجلد المشروع:
+
+```bash
+cd C:/xampp/htdocs/ProSowary/AlFakhamah_Restaurant
+```
+2. إنشـاء المستودع محلياً (إذا لم يتم بعد):
 
 ```bash
 git init
 git add .
 git commit -m "Initial commit"
 ```
-
-3. إنشـاء مستودع على GitHub:
-- إما من خلال الويب: https://github.com/new
-- أو باستخدام GitHub CLI (مسبق التثبيت):
+3. أنشئ مستودعًا على GitHub عبر الويب أو استخدم GitHub CLI:
 
 ```bash
-gh repo create USERNAME/REPO_NAME --public --source=. --remote=origin
+gh repo create YOUR_USERNAME/REPO_NAME --public --source=. --remote=origin
 ```
-
-4. رفع الكود إلى الـ remote:
+4. ادفع التغييرات:
 
 ```bash
 git push -u origin main
-# أو إن كان الفرع الافتراضي master
-# git push -u origin master
 ```
 
-## ملاحظات تشغيل محلي
-- ضع المجلد داخل `htdocs` في XAMPP أو شغِّل الخادم من مسار المشروع.
-- افتح: `http://localhost/AlFakhamah_Restaurant/frontend/index.php` أو حسب مسار المشروع.
+أحتاج لمساعدتك؟
+- أستطيع تنفيذ `git init` و`git commit` ورفع المشروع نيابةً عنك إذا سمحت لي بالوصول إلى جهازك أو زوّدتني بتفاصيل `gh` (أو تفضّل تنفيذ الأوامر محلياً فأنصح باتباع الأوامر أعلاه).
 
----
-
-أخبرني إذا تود أن أقوم بالخطوات نيابةً عنك (أستطيع تشغيل `git init` وتهيئة commit، ويمكنني أيضاً إنشاء المستودع على GitHub إذا زوَّدتني بصلاحية `gh` أو بيانات الوصول).
+إذا تريد، أتمّم لك الآن تعديل الـ `README.md` أو أنفّذ أوامر `git` محليًا—اختر ما تفضّل.
