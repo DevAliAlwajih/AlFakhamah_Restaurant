@@ -1,65 +1,58 @@
-# AlFakhamah_Restaurant
+##AlFakhamah_Restaurant
+مشروع موقع لمطعم – تطبيق ويب بسيط مبني باستخدام PHP و MySQL
 
-مشروع موقع لمطعم — تطبيق ويب بسيط مبني بـ PHP مع ملفات ثابتة للواجهة.
+📌 وصف المشروع (بالعامية)
+هذا مشروع لموقع مطعم بسيط، يتيح للزائر يشوف قائمة الأكلات، يحجز طاولة، ويتواصل مع المطعم.
+وفيه لوحة تحكم للمدير يقدر من خلالها يضيف ويعدل المنتجات ويتابع الحجوزات والاشتراكات.
+المشروع شغال على أي سيرفر محلي مثل XAMPP أو WAMP، وكل الملفات مرتبة بين الواجهة الأمامية والخلفية وقاعدة البيانات.
 
-محتوى المشروع (نظرة عامة)
-- الواجهة الأمامية: مجلد `frontend/` يحتوي صفحات PHP لعرض القوائم، الحجز، والاتصال.
-- الموارد الثابتة: `assets/` يحتوي CSS، JavaScript، و`images/`.
-- الخادم والوظائف: `backend/` يحتوي ملفات معالجة مثل `db.php`, `login.php`, `order.php`, `reserve.php`, `subscribe.php`.
-- لوحة الإدارة: `backend/admin/` حيث توجد صفحات لإدارة المنتجات والمحتوى.
-- نسخة قاعدة البيانات: `DataSet/` تحتوي ملف SQL (استيراد عند الإعداد).
+📌 Project Description (English – Simple)
+This is a simple restaurant website built with PHP and MySQL.
+It allows users to view the menu, make table reservations, and contact the restaurant.
+The admin panel provides tools to manage products, reservations, and content.
+The project runs on any local server environment such as XAMPP or WAMP.
 
-المتطلبات (محليًا)
-- XAMPP أو أي بيئة تشغيل PHP + MySQL (PHP 7.4+ أو أحدث توصية).
-- phpMyAdmin أو أداة أخرى لاستيراد ملف SQL.
+📁 محتوى المشروع
+frontend/ — صفحات PHP لعرض الواجهة (القائمة، الحجز، التواصل).
 
-خطوات التشغيل محليًا
-1. ضع المجلد داخل مجلد الخادم المحلي (مثال: `C:/xampp/htdocs/AlFakhamah_Restaurant`).
-2. شغِّل Apache وMySQL عبر XAMPP.
-3. أنشئ قاعدة بيانات جديدة في phpMyAdmin (مثال: `fakhamah_db`).
-4. استورد ملف SQL الموجود في `DataSet/` (مثل `fakhamah .sql`) إلى القاعدة التي أنشأتها.
-5. افتح وحرِّر ملف الاتصال بقاعدة البيانات `backend/db.php` وضبط اسم القاعدة واسم المستخدم وكلمة المرور:
+assets/ — ملفات CSS و JavaScript والصور.
 
-```php
-// مثال: backend/db.php
+backend/ — ملفات المعالجة مثل:
+db.php, login.php, order.php, reserve.php, subscribe.php
+
+backend/admin/ — لوحة الإدارة لإدارة المنتجات والمحتوى.
+
+DataSet/ — ملف SQL جاهز للاستيراد.
+(مأخوذ من المحتوى الأصلي في الصفحة الحالية) 
+
+🛠 المتطلبات
+XAMPP أو أي بيئة PHP + MySQL (يفضل PHP 7.4+).
+
+phpMyAdmin لاستيراد قاعدة البيانات.
+(مذكور في الصفحة الحالية) 
+
+▶️ خطوات التشغيل محليًا
+ضع المشروع داخل مجلد السيرفر المحلي:
+C:/xampp/htdocs/AlFakhamah_Restaurant
+
+شغّل Apache و MySQL.
+
+أنشئ قاعدة بيانات جديدة (مثال: fakhamah_db).
+
+استورد ملف SQL من مجلد DataSet/.
+
+عدّل بيانات الاتصال في backend/db.php:
+
+php
 $db_host = 'localhost';
 $db_user = 'root';
 $db_pass = '';
 $db_name = 'fakhamah_db';
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
-```
+(مقتبس من الصفحة الحالية) 
 
-6. افتح المتصفح وادخل العنوان المناسب، مثلاً:
+افتح الموقع عبر المتصفح:
 
-```
+كتابة تعليمات برمجية
 http://localhost/AlFakhamah_Restaurant/frontend/index.php
-```
-
-ملحوظات مهمة
-- إن كان هناك ملفات تخص إعدادات محلية أو كلمات مرور (مثل ملفات `.env` أو إعدادات قاعدة البيانات)، لا ترفعها إلى مستودع عام. قم بتحديث `.gitignore` لتجاهل الملفات الحساسة.
-- مسار الصور المرفوعة موجود في `assets/images/uploads/` وقد تم إضافة هذا المسار في `.gitignore` افتراضياً.
-
-رفع المشروع إلى GitHub (مقترح مختصر)
-1. افتح Terminal داخل مجلد المشروع:
-
-```bash
-cd C:/xampp/htdocs/ProSowary/AlFakhamah_Restaurant
-```
-2. إنشـاء المستودع محلياً (إذا لم يتم بعد):
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-```
-3. أنشئ مستودعًا على GitHub عبر الويب أو استخدم GitHub CLI:
-
-```bash
-gh repo create YOUR_USERNAME/REPO_NAME --public --source=. --remote=origin
-```
-4. ادفع التغييرات:
-
-```bash
-git push -u origin main
-```
-.
+(مذكور في الصفحة الحالية) 
